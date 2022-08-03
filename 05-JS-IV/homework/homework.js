@@ -37,7 +37,7 @@ function multiplicarNumeroDesconocidoPorCinco (objetoMisterioso) {
   // "objetoMisterioso" tiene una propiedad llamada "numeroMisterioso"
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
-  var multi = objetoMisterioso.numeroMisterioso * 5
+  var multi = objetoMisterioso['numeroMisterioso'] * 5
   return multi
 
 }
@@ -47,12 +47,20 @@ function eliminarPropiedad (objeto, unaPropiedad) {
   // tip: tenes que usar bracket notation
   // Devuelve el objeto
   // Tu código:
+  delete objeto[unaPropiedad]
+  return objeto
 }
 
 function nuevoUsuario (nombre, email, password) {
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
   // Devuelve el objeto
   // Tu código:
+  var nUsuario = {
+    nombre: nombre,
+    email: email,
+    password: password
+  }
+  return nUsuario
 
 }
 
@@ -60,6 +68,9 @@ function tieneEmail (usuario) {
   // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
   // De lo contratio, devuelve "false"
   // Tu código:
+  if (typeof usuario.email === 'string'){
+    return true
+  }else return false
 }
 
 function tienePropiedad (objeto, propiedad) {
@@ -67,6 +78,9 @@ function tienePropiedad (objeto, propiedad) {
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
+  if(objeto[propiedad] == undefined){
+    return false
+  }else return true  
 }
 
 function verificarPassword (usuario, password) {
